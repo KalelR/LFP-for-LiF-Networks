@@ -1,0 +1,1275 @@
+ERROR: LoadError: InexactError: Int64(0.5)
+Stacktrace:
+ [1] Int64(::Float64) at ./float.jl:709
+ [2] top-level scope at /home/jobs/kalel/LFP/LIF.jl:51
+ [3] include at ./boot.jl:328 [inlined]
+ [4] include_relative(::Module, ::String) at ./loading.jl:1105
+ [5] include(::Module, ::String) at ./Base.jl:31
+ [6] exec_options(::Base.JLOptions) at ./client.jl:287
+ [7] _start() at ./client.jl:460
+in expression starting at /home/jobs/kalel/LFP/LIF.jl:51
+ERROR: LoadError: PyError ($(Expr(:escape, :(ccall(#= /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:43 =# @pysym(:PyObject_Call), PyPtr, (PyPtr, PyPtr, PyPtr), o, pyargsptr, kw))))) <class '_tkinter.TclError'>
+TclError('couldn\'t connect to display "localhost:15.0"')
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/pyplot.py", line 610, in gcf
+    return figure()
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/pyplot.py", line 545, in figure
+    **kwargs)
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/backend_bases.py", line 3261, in new_figure_manager
+    return cls.new_figure_manager_given_figure(num, fig)
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/backends/_backend_tk.py", line 950, in new_figure_manager_given_figure
+    window = tk.Tk(className="matplotlib")
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/tkinter/__init__.py", line 2023, in __init__
+    self.tk = _tkinter.create(screenName, baseName, className, interactive, wantobjects, useTk, sync, use)
+
+Stacktrace:
+ [1] pyerr_check at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:60 [inlined]
+ [2] pyerr_check at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:64 [inlined]
+ [3] _handle_error(::String) at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:81
+ [4] macro expansion at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:95 [inlined]
+ [5] #110 at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:43 [inlined]
+ [6] disable_sigint at ./c.jl:446 [inlined]
+ [7] __pycall! at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:42 [inlined]
+ [8] _pycall!(::PyCall.PyObject, ::PyCall.PyObject, ::Tuple{}, ::Int64, ::Ptr{Nothing}) at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:29
+ [9] _pycall! at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:11 [inlined]
+ [10] #pycall#116 at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:83 [inlined]
+ [11] pycall at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:83 [inlined]
+ [12] gcf() at /home/posgrad/kalel/.julia/packages/PyPlot/4wzW1/src/PyPlot.jl:154
+ [13] _create_backend_figure(::Plots.Plot{Plots.PyPlotBackend}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/backends/pyplot.jl:333
+ [14] #invokelatest#1 at ./essentials.jl:709 [inlined]
+ [15] invokelatest at ./essentials.jl:708 [inlined]
+ [16] _plot_setup(::Plots.Plot{Plots.PyPlotBackend}, ::Dict{Symbol,Any}, ::Array{Dict{Symbol,Any},1}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/pipeline.jl:217
+ [17] _plot!(::Plots.Plot{Plots.PyPlotBackend}, ::Dict{Symbol,Any}, ::Tuple{Array{Int64,1},Array{Float64,1}}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/plot.jl:205
+ [18] #plot#138(::Base.Iterators.Pairs{Symbol,Any,Tuple{Symbol,Symbol},NamedTuple{(:label, :color),Tuple{String,Symbol}}}, ::typeof(plot), ::Array{Int64,1}, ::Vararg{Any,N} where N) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/plot.jl:57
+ [19] (::RecipesBase.var"#kw##plot")(::NamedTuple{(:label, :color),Tuple{String,Symbol}}, ::typeof(plot), ::Array{Int64,1}, ::Array{Float64,1}) at ./none:0
+ [20] plotSpikeRate(::Array{Array{Float64,1},1}, ::Int64, ::Int64, ::Float64, ::String) at /home/jobs/kalel/LFP/plot_package.jl:24
+ [21] top-level scope at /home/jobs/kalel/LFP/LIF.jl:89
+ [22] include at ./boot.jl:328 [inlined]
+ [23] include_relative(::Module, ::String) at ./loading.jl:1105
+ [24] include(::Module, ::String) at ./Base.jl:31
+ [25] exec_options(::Base.JLOptions) at ./client.jl:287
+ [26] _start() at ./client.jl:460
+in expression starting at /home/jobs/kalel/LFP/LIF.jl:89
+Now I'll start integrating version 0.2. I have Ni = 1000, Ne = 4000. Running for t_exec = 500.0, with t_trans = 0.0.
+6250.400008 seconds (19.22 G allocations: 289.254 GiB, 0.74% gc time)
+Finished integration
+media = 1.2039020000000002
+ERROR: LoadError: PyError ($(Expr(:escape, :(ccall(#= /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:43 =# @pysym(:PyObject_Call), PyPtr, (PyPtr, PyPtr, PyPtr), o, pyargsptr, kw))))) <class '_tkinter.TclError'>
+TclError('couldn\'t connect to display "localhost:10.0"')
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/pyplot.py", line 610, in gcf
+    return figure()
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/pyplot.py", line 545, in figure
+    **kwargs)
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/backend_bases.py", line 3261, in new_figure_manager
+    return cls.new_figure_manager_given_figure(num, fig)
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/backends/_backend_tk.py", line 950, in new_figure_manager_given_figure
+    window = tk.Tk(className="matplotlib")
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/tkinter/__init__.py", line 2023, in __init__
+    self.tk = _tkinter.create(screenName, baseName, className, interactive, wantobjects, useTk, sync, use)
+
+Stacktrace:
+ [1] pyerr_check at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:60 [inlined]
+ [2] pyerr_check at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:64 [inlined]
+ [3] _handle_error(::String) at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:81
+ [4] macro expansion at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:95 [inlined]
+ [5] #110 at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:43 [inlined]
+ [6] disable_sigint at ./c.jl:446 [inlined]
+ [7] __pycall! at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:42 [inlined]
+ [8] _pycall!(::PyCall.PyObject, ::PyCall.PyObject, ::Tuple{}, ::Int64, ::Ptr{Nothing}) at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:29
+ [9] _pycall! at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:11 [inlined]
+ [10] #pycall#116 at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:83 [inlined]
+ [11] pycall at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:83 [inlined]
+ [12] gcf() at /home/posgrad/kalel/.julia/packages/PyPlot/4wzW1/src/PyPlot.jl:154
+ [13] _create_backend_figure(::Plots.Plot{Plots.PyPlotBackend}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/backends/pyplot.jl:333
+ [14] #invokelatest#1 at ./essentials.jl:709 [inlined]
+ [15] invokelatest at ./essentials.jl:708 [inlined]
+ [16] _plot_setup(::Plots.Plot{Plots.PyPlotBackend}, ::Dict{Symbol,Any}, ::Array{Dict{Symbol,Any},1}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/pipeline.jl:217
+ [17] _plot!(::Plots.Plot{Plots.PyPlotBackend}, ::Dict{Symbol,Any}, ::Tuple{Array{Int64,1},Array{Float64,1}}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/plot.jl:205
+ [18] #plot#138(::Base.Iterators.Pairs{Symbol,Any,Tuple{Symbol,Symbol},NamedTuple{(:label, :color),Tuple{String,Symbol}}}, ::typeof(plot), ::Array{Int64,1}, ::Vararg{Any,N} where N) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/plot.jl:57
+ [19] (::RecipesBase.var"#kw##plot")(::NamedTuple{(:label, :color),Tuple{String,Symbol}}, ::typeof(plot), ::Array{Int64,1}, ::Array{Float64,1}) at ./none:0
+ [20] plotSpikeRate(::Array{Array{Float64,1},1}, ::Int64, ::Int64, ::Float64, ::String) at /home/jobs/kalel/LFP/plot_package.jl:24
+ [21] top-level scope at /home/jobs/kalel/LFP/LIF.jl:89
+ [22] include at ./boot.jl:328 [inlined]
+ [23] include_relative(::Module, ::String) at ./loading.jl:1105
+ [24] include(::Module, ::String) at ./Base.jl:31
+ [25] exec_options(::Base.JLOptions) at ./client.jl:287
+ [26] _start() at ./client.jl:460
+in expression starting at /home/jobs/kalel/LFP/LIF.jl:89
+Now I'll start integrating version 0.4. I have Ni = 100, Ne = 400. Running for t_exec = 1000.0, with t_trans = 0.0.
+6162.154093 seconds (43.06 G allocations: 650.299 GiB, 2.04% gc time)
+Finished integration
+media = 2.4009980000000004
+ERROR: LoadError: PyError ($(Expr(:escape, :(ccall(#= /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:43 =# @pysym(:PyObject_Call), PyPtr, (PyPtr, PyPtr, PyPtr), o, pyargsptr, kw))))) <class '_tkinter.TclError'>
+TclError('couldn\'t connect to display "localhost:10.0"')
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/pyplot.py", line 610, in gcf
+    return figure()
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/pyplot.py", line 545, in figure
+    **kwargs)
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/backend_bases.py", line 3261, in new_figure_manager
+    return cls.new_figure_manager_given_figure(num, fig)
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/backends/_backend_tk.py", line 950, in new_figure_manager_given_figure
+    window = tk.Tk(className="matplotlib")
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/tkinter/__init__.py", line 2023, in __init__
+    self.tk = _tkinter.create(screenName, baseName, className, interactive, wantobjects, useTk, sync, use)
+
+Stacktrace:
+ [1] pyerr_check at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:60 [inlined]
+ [2] pyerr_check at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:64 [inlined]
+ [3] _handle_error(::String) at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:81
+ [4] macro expansion at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:95 [inlined]
+ [5] #110 at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:43 [inlined]
+ [6] disable_sigint at ./c.jl:446 [inlined]
+ [7] __pycall! at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:42 [inlined]
+ [8] _pycall!(::PyCall.PyObject, ::PyCall.PyObject, ::Tuple{}, ::Int64, ::Ptr{Nothing}) at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:29
+ [9] _pycall! at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:11 [inlined]
+ [10] #pycall#116 at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:83 [inlined]
+ [11] pycall at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:83 [inlined]
+ [12] gcf() at /home/posgrad/kalel/.julia/packages/PyPlot/4wzW1/src/PyPlot.jl:154
+ [13] _create_backend_figure(::Plots.Plot{Plots.PyPlotBackend}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/backends/pyplot.jl:333
+ [14] #invokelatest#1 at ./essentials.jl:709 [inlined]
+ [15] invokelatest at ./essentials.jl:708 [inlined]
+ [16] _plot_setup(::Plots.Plot{Plots.PyPlotBackend}, ::Dict{Symbol,Any}, ::Array{Dict{Symbol,Any},1}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/pipeline.jl:217
+ [17] _plot!(::Plots.Plot{Plots.PyPlotBackend}, ::Dict{Symbol,Any}, ::Tuple{Array{Int64,1},Array{Float64,1}}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/plot.jl:205
+ [18] #plot#138(::Base.Iterators.Pairs{Symbol,Any,Tuple{Symbol,Symbol},NamedTuple{(:label, :color),Tuple{String,Symbol}}}, ::typeof(plot), ::Array{Int64,1}, ::Vararg{Any,N} where N) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/plot.jl:57
+ [19] (::RecipesBase.var"#kw##plot")(::NamedTuple{(:label, :color),Tuple{String,Symbol}}, ::typeof(plot), ::Array{Int64,1}, ::Array{Float64,1}) at ./none:0
+ [20] plotSpikeRate(::Array{Array{Float64,1},1}, ::Int64, ::Int64, ::Float64, ::String) at /home/jobs/kalel/LFP/plot_package.jl:24
+ [21] top-level scope at /home/jobs/kalel/LFP/LIF.jl:89
+ [22] include at ./boot.jl:328 [inlined]
+ [23] include_relative(::Module, ::String) at ./loading.jl:1105
+ [24] include(::Module, ::String) at ./Base.jl:31
+ [25] exec_options(::Base.JLOptions) at ./client.jl:287
+ [26] _start() at ./client.jl:460
+in expression starting at /home/jobs/kalel/LFP/LIF.jl:89
+Now I'll start integrating version 0.3. I have Ni = 100, Ne = 400. Running for t_exec = 1000.0, with t_trans = 0.0.
+6018.365602 seconds (43.06 G allocations: 650.299 GiB, 2.09% gc time)
+Finished integration
+media = 2.4009980000000004
+ERROR: LoadError: PyError ($(Expr(:escape, :(ccall(#= /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:43 =# @pysym(:PyObject_Call), PyPtr, (PyPtr, PyPtr, PyPtr), o, pyargsptr, kw))))) <class '_tkinter.TclError'>
+TclError('couldn\'t connect to display "localhost:10.0"')
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/pyplot.py", line 610, in gcf
+    return figure()
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/pyplot.py", line 545, in figure
+    **kwargs)
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/backend_bases.py", line 3261, in new_figure_manager
+    return cls.new_figure_manager_given_figure(num, fig)
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/backends/_backend_tk.py", line 950, in new_figure_manager_given_figure
+    window = tk.Tk(className="matplotlib")
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/tkinter/__init__.py", line 2023, in __init__
+    self.tk = _tkinter.create(screenName, baseName, className, interactive, wantobjects, useTk, sync, use)
+
+Stacktrace:
+ [1] pyerr_check at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:60 [inlined]
+ [2] pyerr_check at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:64 [inlined]
+ [3] _handle_error(::String) at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:81
+ [4] macro expansion at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:95 [inlined]
+ [5] #110 at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:43 [inlined]
+ [6] disable_sigint at ./c.jl:446 [inlined]
+ [7] __pycall! at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:42 [inlined]
+ [8] _pycall!(::PyCall.PyObject, ::PyCall.PyObject, ::Tuple{}, ::Int64, ::Ptr{Nothing}) at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:29
+ [9] _pycall! at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:11 [inlined]
+ [10] #pycall#116 at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:83 [inlined]
+ [11] pycall at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:83 [inlined]
+ [12] gcf() at /home/posgrad/kalel/.julia/packages/PyPlot/4wzW1/src/PyPlot.jl:154
+ [13] _create_backend_figure(::Plots.Plot{Plots.PyPlotBackend}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/backends/pyplot.jl:333
+ [14] #invokelatest#1 at ./essentials.jl:709 [inlined]
+ [15] invokelatest at ./essentials.jl:708 [inlined]
+ [16] _plot_setup(::Plots.Plot{Plots.PyPlotBackend}, ::Dict{Symbol,Any}, ::Array{Dict{Symbol,Any},1}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/pipeline.jl:217
+ [17] _plot!(::Plots.Plot{Plots.PyPlotBackend}, ::Dict{Symbol,Any}, ::Tuple{Array{Int64,1},Array{Float64,1}}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/plot.jl:205
+ [18] #plot#138(::Base.Iterators.Pairs{Symbol,Any,Tuple{Symbol,Symbol},NamedTuple{(:label, :color),Tuple{String,Symbol}}}, ::typeof(plot), ::Array{Int64,1}, ::Vararg{Any,N} where N) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/plot.jl:57
+ [19] (::RecipesBase.var"#kw##plot")(::NamedTuple{(:label, :color),Tuple{String,Symbol}}, ::typeof(plot), ::Array{Int64,1}, ::Array{Float64,1}) at ./none:0
+ [20] plotSpikeRate(::Array{Array{Float64,1},1}, ::Int64, ::Int64, ::Float64, ::String) at /home/jobs/kalel/LFP/plot_package.jl:24
+ [21] top-level scope at /home/jobs/kalel/LFP/LIF.jl:89
+ [22] include at ./boot.jl:328 [inlined]
+ [23] include_relative(::Module, ::String) at ./loading.jl:1105
+ [24] include(::Module, ::String) at ./Base.jl:31
+ [25] exec_options(::Base.JLOptions) at ./client.jl:287
+ [26] _start() at ./client.jl:460
+in expression starting at /home/jobs/kalel/LFP/LIF.jl:89
+Now I'll start integrating version 0.2. I have Ni = 100, Ne = 400. Running for t_exec = 1000.0, with t_trans = 0.0.
+5296.850940 seconds (38.91 G allocations: 587.779 GiB, 2.00% gc time)
+Finished integration
+media = 2.4009980000000004
+
+signal (15): Terminado
+in expression starting at /home/jobs/kalel/LFP/LIF_v2.jl:57
+calc_gij at /home/jobs/kalel/LFP/LIF_package.jl:13
+calcIsyn at /home/jobs/kalel/LFP/LIF_package.jl:53
+macro expansion at /home/jobs/kalel/LFP/LIF_package.jl:94 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+LIF! at /home/jobs/kalel/LFP/LIF_package.jl:85
+integraStep at /home/jobs/kalel/LFP/integra_RK4.jl:8
+unknown function (ip: 0x7fe1bba62d2a)
+solver at /home/jobs/kalel/LFP/integra_RK4.jl:39
+unknown function (ip: 0x7fe1bba623c9)
+unknown function (ip: 0x7fe1cf4cef7c)
+unknown function (ip: 0x7fe1cf4cec49)
+unknown function (ip: 0x7fe1cf4cf918)
+unknown function (ip: 0x7fe1cf4cfe8f)
+unknown function (ip: 0xfffffffffffffffe)
+unknown function (ip: 0x7fe1429cb38f)
+unknown function (ip: 0x1)
+unknown function (ip: 0x7fe1cf4d025e)
+unknown function (ip: 0x7fe1cf3b0276)
+unknown function (ip: 0x7fe1cf38e7ad)
+jl_load at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+include at ./boot.jl:328 [inlined]
+include_relative at ./loading.jl:1105
+include at ./Base.jl:31
+exec_options at ./client.jl:287
+_start at ./client.jl:460
+jfptr__start_2084.clone_1 at /usr/lib/x86_64-linux-gnu/julia/sys.so (unknown line)
+unknown function (ip: 0x55768922a755)
+unknown function (ip: 0x55768922a332)
+__libc_start_main at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0x55768922a3d9)
+unknown function (ip: 0xffffffffffffffff)
+Allocations: 197157112 (Pool: 197105788; Big: 51324); GC: 59
+Now I'll start integrating version 2.0. I have Ni = 1000, Ne = 4000. Running for t_exec = 2000.0, with t_trans = 0.0.
+ERROR: LoadError: DimensionMismatch("dimensions must match")
+Stacktrace:
+ [1] promote_shape at ./indices.jl:154 [inlined]
+ [2] promote_shape at ./indices.jl:145 [inlined]
+ [3] +(::Array{Float64,1}, ::Array{Float64,1}) at ./arraymath.jl:45
+ [4] generateExternalInput(::Int64, ::Float64, ::Float64, ::Float64, ::Int64, ::Int64) at /home/jobs/kalel/LFP/noise_package.jl:57
+ [5] top-level scope at /home/jobs/kalel/LFP/LIF_v2.jl:41
+ [6] include at ./boot.jl:328 [inlined]
+ [7] include_relative(::Module, ::String) at ./loading.jl:1105
+ [8] include(::Module, ::String) at ./Base.jl:31
+ [9] exec_options(::Base.JLOptions) at ./client.jl:287
+ [10] _start() at ./client.jl:460
+in expression starting at /home/jobs/kalel/LFP/LIF_v2.jl:41
+ERROR: LoadError: DimensionMismatch("dimensions must match")
+Stacktrace:
+ [1] promote_shape at ./indices.jl:154 [inlined]
+ [2] promote_shape at ./indices.jl:145 [inlined]
+ [3] +(::Array{Float64,1}, ::Array{Float64,1}) at ./arraymath.jl:45
+ [4] generateExternalInput(::Int64, ::Float64, ::Float64, ::Float64, ::Int64, ::Int64) at /home/jobs/kalel/LFP/noise_package.jl:57
+ [5] top-level scope at /home/jobs/kalel/LFP/LIF_v2.jl:41
+ [6] include at ./boot.jl:328 [inlined]
+ [7] include_relative(::Module, ::String) at ./loading.jl:1105
+ [8] include(::Module, ::String) at ./Base.jl:31
+ [9] exec_options(::Base.JLOptions) at ./client.jl:287
+ [10] _start() at ./client.jl:460
+in expression starting at /home/jobs/kalel/LFP/LIF_v2.jl:41
+
+signal (15): Terminado
+in expression starting at /home/jobs/kalel/LFP/noise_package.jl:2
+_ZNK4llvm6object7ELFFileINS0_7ELFTypeILNS_7support10endiannessE1ELb1EEEE8sectionsEv at /usr/bin/../lib/x86_64-linux-gnu/libLLVM-8.so.1 (unknown line)
+_ZNK4llvm6object13ELFObjectFileINS0_7ELFTypeILNS_7support10endiannessE1ELb1EEEE15getSectionIndexENS0_11DataRefImplE at /usr/bin/../lib/x86_64-linux-gnu/libLLVM-8.so.1 (unknown line)
+_ZN4llvm12DWARFContext6createERKNS_6object10ObjectFileEPKNS_16LoadedObjectInfoENS_12function_refIFNS_11ErrorPolicyENS_5ErrorEEEENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE at /usr/bin/../lib/x86_64-linux-gnu/libLLVM-8.so.1 (unknown line)
+unknown function (ip: 0x7fe85dbc2569)
+unknown function (ip: 0x7fe85dbb208e)
+unknown function (ip: 0x7fe85dbb2b29)
+unknown function (ip: 0x7fe85dbb2f04)
+unknown function (ip: 0x7fe85dbab07b)
+unknown function (ip: 0x7fe85dbab459)
+unknown function (ip: 0x7fe85db652aa)
+unknown function (ip: 0x7fe85db92f42)
+unknown function (ip: 0x7fe85daef10b)
+jl_apply_generic at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+err at /home/posgrad/kalel/.julia/packages/Requires/qy6zC/src/require.jl:42
+#19 at /home/posgrad/kalel/.julia/packages/Requires/qy6zC/src/require.jl:84
+unknown function (ip: 0x7fe84a17eaec)
+withpath at /home/posgrad/kalel/.julia/packages/Requires/qy6zC/src/require.jl:32
+#18 at /home/posgrad/kalel/.julia/packages/Requires/qy6zC/src/require.jl:83
+unknown function (ip: 0x7fe84a17ea7c)
+listenpkg at /home/posgrad/kalel/.julia/packages/Requires/qy6zC/src/require.jl:15
+macro expansion at /home/posgrad/kalel/.julia/packages/Requires/qy6zC/src/require.jl:81 [inlined]
+__init__ at /home/posgrad/kalel/.julia/packages/ArrayInterface/hl7dz/src/ArrayInterface.jl:479
+unknown function (ip: 0x7fe84a16e23c)
+unknown function (ip: 0x7fe85db18949)
+jl_init_restored_modules at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+_include_from_serialized at ./loading.jl:692
+_require_search_from_serialized at ./loading.jl:776
+_tryrequire_from_serialized at ./loading.jl:707
+_require_search_from_serialized at ./loading.jl:765
+_tryrequire_from_serialized at ./loading.jl:707
+_require_search_from_serialized at ./loading.jl:765
+_tryrequire_from_serialized at ./loading.jl:707
+_require_search_from_serialized at ./loading.jl:765
+_require at ./loading.jl:1001
+require at ./loading.jl:922
+require at ./loading.jl:917
+unknown function (ip: 0x7fe85db18593)
+unknown function (ip: 0x7fe85db196b6)
+unknown function (ip: 0x7fe85daf77ad)
+jl_load at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+include at ./boot.jl:328 [inlined]
+include_relative at ./loading.jl:1105
+include at ./Base.jl:31
+include at ./client.jl:424
+unknown function (ip: 0x7fe85dc37f7c)
+unknown function (ip: 0x7fe85dc37c49)
+unknown function (ip: 0x7fe85dc380b0)
+unknown function (ip: 0x7fe85dc38668)
+unknown function (ip: 0x7fe85dc38e8f)
+unknown function (ip: 0xfffffffffffffffe)
+unknown function (ip: 0x7fe84bcf4b8f)
+unknown function (ip: 0xffffffffffffffff)
+unknown function (ip: 0x7fe85dc3925e)
+unknown function (ip: 0x7fe85db19276)
+unknown function (ip: 0x7fe85daf77ad)
+jl_load at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+include at ./boot.jl:328 [inlined]
+include_relative at ./loading.jl:1105
+include at ./Base.jl:31
+exec_options at ./client.jl:287
+_start at ./client.jl:460
+jfptr__start_2084.clone_1 at /usr/lib/x86_64-linux-gnu/julia/sys.so (unknown line)
+unknown function (ip: 0x5631eb080755)
+unknown function (ip: 0x5631eb080332)
+__libc_start_main at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0x5631eb0803d9)
+unknown function (ip: 0xffffffffffffffff)
+Allocations: 3225890 (Pool: 3225328; Big: 562); GC: 3
+Now I'll start integrating version 2.0. I have Ni = 1000, Ne = 4000. Running for t_exec = 2000.0, with t_trans = 0.0.
+1923.220245 seconds (587.87 M allocations: 31.584 GiB, 0.20% gc time)
+Finished integration.
+media = 1.2457869000000001
+media = 0.0
+media = 0.0
+ERROR: LoadError: PyError ($(Expr(:escape, :(ccall(#= /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:43 =# @pysym(:PyObject_Call), PyPtr, (PyPtr, PyPtr, PyPtr), o, pyargsptr, kw))))) <class '_tkinter.TclError'>
+TclError('couldn\'t connect to display "localhost:12.0"')
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/pyplot.py", line 610, in gcf
+    return figure()
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/pyplot.py", line 545, in figure
+    **kwargs)
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/backend_bases.py", line 3261, in new_figure_manager
+    return cls.new_figure_manager_given_figure(num, fig)
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/backends/_backend_tk.py", line 950, in new_figure_manager_given_figure
+    window = tk.Tk(className="matplotlib")
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/tkinter/__init__.py", line 2023, in __init__
+    self.tk = _tkinter.create(screenName, baseName, className, interactive, wantobjects, useTk, sync, use)
+
+Stacktrace:
+ [1] pyerr_check at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:60 [inlined]
+ [2] pyerr_check at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:64 [inlined]
+ [3] _handle_error(::String) at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:81
+ [4] macro expansion at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:95 [inlined]
+ [5] #110 at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:43 [inlined]
+ [6] disable_sigint at ./c.jl:446 [inlined]
+ [7] __pycall! at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:42 [inlined]
+ [8] _pycall!(::PyCall.PyObject, ::PyCall.PyObject, ::Tuple{}, ::Int64, ::Ptr{Nothing}) at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:29
+ [9] _pycall! at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:11 [inlined]
+ [10] #pycall#116 at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:83 [inlined]
+ [11] pycall at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:83 [inlined]
+ [12] gcf() at /home/posgrad/kalel/.julia/packages/PyPlot/4wzW1/src/PyPlot.jl:154
+ [13] _create_backend_figure(::Plots.Plot{Plots.PyPlotBackend}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/backends/pyplot.jl:333
+ [14] #invokelatest#1 at ./essentials.jl:709 [inlined]
+ [15] invokelatest at ./essentials.jl:708 [inlined]
+ [16] _plot_setup(::Plots.Plot{Plots.PyPlotBackend}, ::Dict{Symbol,Any}, ::Array{Dict{Symbol,Any},1}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/pipeline.jl:217
+ [17] _plot!(::Plots.Plot{Plots.PyPlotBackend}, ::Dict{Symbol,Any}, ::Tuple{}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/plot.jl:205
+ [18] #plot#138(::Base.Iterators.Pairs{Symbol,Symbol,Tuple{Symbol},NamedTuple{(:seriestype,),Tuple{Symbol}}}, ::typeof(plot)) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/plot.jl:57
+ [19] #plot at ./none:0 [inlined]
+ [20] #scatter#402 at /home/posgrad/kalel/.julia/packages/RecipesBase/G4s6f/src/RecipesBase.jl:393 [inlined]
+ [21] scatter at /home/posgrad/kalel/.julia/packages/RecipesBase/G4s6f/src/RecipesBase.jl:393 [inlined]
+ [22] plotRaster(::Array{Array{Float64,1},1}, ::Array{Int64,1}, ::Float64, ::Float64, ::String) at /home/jobs/kalel/LFP/plot_package.jl:108
+ [23] top-level scope at /home/jobs/kalel/LFP/LIF_v2.jl:75
+ [24] include at ./boot.jl:328 [inlined]
+ [25] include_relative(::Module, ::String) at ./loading.jl:1105
+ [26] include(::Module, ::String) at ./Base.jl:31
+ [27] exec_options(::Base.JLOptions) at ./client.jl:287
+ [28] _start() at ./client.jl:460
+in expression starting at /home/jobs/kalel/LFP/LIF_v2.jl:75
+Now I'll start integrating version 2.1. I have Ni = 1000, Ne = 4000. Running for t_exec = 2000.0, with t_trans = 0.0.
+17852.825111 seconds (582.12 M allocations: 31.084 GiB, 0.06% gc time)
+Finished integration.
+
+signal (15): Terminado
+in expression starting at /home/jobs/kalel/LFP/noise_package.jl:2
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+jl_task_get_next at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+poptaskref at ./task.jl:660
+wait at ./task.jl:667
+task_done_hook at ./task.jl:401
+unknown function (ip: 0x7fe3f240fafd)
+unknown function (ip: 0x7fe3f2430d83)
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0xffffffffffffffff)
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+jl_task_get_next at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+poptaskref at ./task.jl:660
+wait at ./task.jl:667
+task_done_hook at ./task.jl:401
+unknown function (ip: 0x7fe3f240fafd)
+unknown function (ip: 0x7fe3f2430d83)
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0xffffffffffffffff)
+unknown function (ip: 0x7fe3f23eb185)
+unknown function (ip: 0x7fe3f23eb1f3)
+jl_has_typevar at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+jl_type_unionall at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+unknown function (ip: 0x7fe3f244d3de)
+unknown function (ip: 0x7fe3f244d75e)
+unknown function (ip: 0x7fe3f244dfac)
+unknown function (ip: 0x7fe3f244de1b)
+unknown function (ip: 0x7fe3f244da5b)
+unknown function (ip: 0x7fe3f244dc10)
+unknown function (ip: 0x7fe3f244e006)
+unknown function (ip: 0x7fe3f244e006)
+unknown function (ip: 0x7fe3f244e006)
+unknown function (ip: 0x7fe3f244e006)
+unknown function (ip: 0x7fe3f244e006)
+unknown function (ip: 0x7fe3f244e006)
+unknown function (ip: 0x7fe3f244e006)
+unknown function (ip: 0x7fe3f244e006)
+unknown function (ip: 0x7fe3f244e006)
+unknown function (ip: 0x7fe3f244e006)
+unknown function (ip: 0x7fe3f244e006)
+unknown function (ip: 0x7fe3f244e006)
+unknown function (ip: 0x7fe3f244e006)
+unknown function (ip: 0x7fe3f23fbb2a)
+unknown function (ip: 0x7fe3f23fce29)
+unknown function (ip: 0x7fe3f23ff028)
+jl_method_table_insert at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+unknown function (ip: 0x7fe3f241acb7)
+jl_restore_incremental at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+_include_from_serialized at ./loading.jl:676
+_require_search_from_serialized at ./loading.jl:776
+_tryrequire_from_serialized at ./loading.jl:707
+_require_search_from_serialized at ./loading.jl:765
+_tryrequire_from_serialized at ./loading.jl:707
+_require_search_from_serialized at ./loading.jl:765
+_require at ./loading.jl:1001
+require at ./loading.jl:922
+require at ./loading.jl:917
+unknown function (ip: 0x7fe3f2423593)
+unknown function (ip: 0x7fe3f24246b6)
+unknown function (ip: 0x7fe3f24027ad)
+jl_load at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+include at ./boot.jl:328 [inlined]
+include_relative at ./loading.jl:1105
+include at ./Base.jl:31
+include at ./client.jl:424
+unknown function (ip: 0x7fe3f2542f7c)
+unknown function (ip: 0x7fe3f2542c49)
+unknown function (ip: 0x7fe3f25430b0)
+unknown function (ip: 0x7fe3f2543668)
+unknown function (ip: 0x7fe3f2543e8f)
+unknown function (ip: 0xfffffffffffffffe)
+unknown function (ip: 0x7fe3e068200f)
+unknown function (ip: 0xffffffffffffffff)
+unknown function (ip: 0x7fe3f254425e)
+unknown function (ip: 0x7fe3f2424276)
+unknown function (ip: 0x7fe3f24027ad)
+jl_load at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+include at ./boot.jl:328 [inlined]
+include_relative at ./loading.jl:1105
+include at ./Base.jl:31
+exec_options at ./client.jl:287
+_start at ./client.jl:460
+jfptr__start_2084.clone_1 at /usr/lib/x86_64-linux-gnu/julia/sys.so (unknown line)
+unknown function (ip: 0x56493d89b755)
+unknown function (ip: 0x56493d89b332)
+__libc_start_main at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0x56493d89b3d9)
+unknown function (ip: 0xffffffffffffffff)
+Allocations: 31534032 (Pool: 31532063; Big: 1969); GC: 6
+
+signal (15): Terminado
+in expression starting at /home/jobs/kalel/LFP/noise_package.jl:2
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+jl_task_get_next at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+poptaskref at ./task.jl:660
+wait at ./task.jl:667
+task_done_hook at ./task.jl:401
+unknown function (ip: 0x7fefab8e6afd)
+unknown function (ip: 0x7fefab907d83)
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0xffffffffffffffff)
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+jl_task_get_next at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+poptaskref at ./task.jl:660
+wait at ./task.jl:667
+task_done_hook at ./task.jl:401
+unknown function (ip: 0x7fefab8e6afd)
+unknown function (ip: 0x7fefab907d83)
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0xffffffffffffffff)
+unknown function (ip: 0x7fefab8d2c4a)
+jl_method_table_insert at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+unknown function (ip: 0x7fefab8f1cb7)
+jl_restore_incremental at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+_include_from_serialized at ./loading.jl:676
+_require_search_from_serialized at ./loading.jl:776
+_tryrequire_from_serialized at ./loading.jl:707
+_require_search_from_serialized at ./loading.jl:765
+_tryrequire_from_serialized at ./loading.jl:707
+_require_search_from_serialized at ./loading.jl:765
+_tryrequire_from_serialized at ./loading.jl:707
+_require_search_from_serialized at ./loading.jl:765
+_require at ./loading.jl:1001
+require at ./loading.jl:922
+require at ./loading.jl:917
+unknown function (ip: 0x7fefab8fa593)
+unknown function (ip: 0x7fefab8fb6b6)
+unknown function (ip: 0x7fefab8d97ad)
+jl_load at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+include at ./boot.jl:328 [inlined]
+include_relative at ./loading.jl:1105
+include at ./Base.jl:31
+include at ./client.jl:424
+unknown function (ip: 0x7fefaba19f7c)
+unknown function (ip: 0x7fefaba19c49)
+unknown function (ip: 0x7fefaba1a0b0)
+unknown function (ip: 0x7fefaba1a668)
+unknown function (ip: 0x7fefaba1ae8f)
+unknown function (ip: 0xfffffffffffffffe)
+unknown function (ip: 0x7fef99b5600f)
+unknown function (ip: 0xffffffffffffffff)
+unknown function (ip: 0x7fefaba1b25e)
+unknown function (ip: 0x7fefab8fb276)
+unknown function (ip: 0x7fefab8d97ad)
+jl_load at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+include at ./boot.jl:328 [inlined]
+include_relative at ./loading.jl:1105
+include at ./Base.jl:31
+exec_options at ./client.jl:287
+_start at ./client.jl:460
+jfptr__start_2084.clone_1 at /usr/lib/x86_64-linux-gnu/julia/sys.so (unknown line)
+unknown function (ip: 0x564c76393755)
+unknown function (ip: 0x564c76393332)
+__libc_start_main at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0x564c763933d9)
+unknown function (ip: 0xffffffffffffffff)
+Allocations: 34544325 (Pool: 34541712; Big: 2613); GC: 8
+Now I'll start integrating version 2.1. I have Ni = 100, Ne = 400. Running for t_exec = 2000.0, with t_trans = 0.0.
+274.017115 seconds (46.01 M allocations: 3.348 GiB, 0.33% gc time)
+Finished integration.
+Now I'll start integrating version 2.1. I have Ni = 100, Ne = 400. Running for t_exec = 2000.0, with t_trans = 0.0.
+2088.334137 seconds (46.13 M allocations: 3.350 GiB, 0.08% gc time)
+Finished integration.
+Now I'll start integrating version 2.1. I have Ni = 100, Ne = 400. Running for t_exec = 2000.0, with t_trans = 0.0.
+2113.382181 seconds (46.12 M allocations: 3.350 GiB, 0.06% gc time)
+Finished integration.
+Now I'll start integrating version 2.1. I have Ni = 100, Ne = 400. Running for t_exec = 2000.0, with t_trans = 0.0.
+274.568329 seconds (46.01 M allocations: 3.348 GiB, 0.40% gc time)
+Finished integration.
+media = 2.4449270000000007
+media = 0.014470000000000005
+media = 0.00037124999999999994
+Now I'll start integrating version 2.1. I have Ni = 100, Ne = 400. Running for t_exec = 2000.0, with t_trans = 0.0.
+505.157515 seconds (45.95 M allocations: 3.347 GiB, 0.18% gc time)
+Finished integration.
+media = 1.245146
+media = 0.004315
+media = 0.0029000000000000007
+ERROR: LoadError: PyError ($(Expr(:escape, :(ccall(#= /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:43 =# @pysym(:PyObject_Call), PyPtr, (PyPtr, PyPtr, PyPtr), o, pyargsptr, kw))))) <class '_tkinter.TclError'>
+TclError('couldn\'t connect to display "localhost:16.0"')
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/pyplot.py", line 610, in gcf
+    return figure()
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/pyplot.py", line 545, in figure
+    **kwargs)
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/backend_bases.py", line 3261, in new_figure_manager
+    return cls.new_figure_manager_given_figure(num, fig)
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/backends/_backend_tk.py", line 950, in new_figure_manager_given_figure
+    window = tk.Tk(className="matplotlib")
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/tkinter/__init__.py", line 2023, in __init__
+    self.tk = _tkinter.create(screenName, baseName, className, interactive, wantobjects, useTk, sync, use)
+
+Stacktrace:
+ [1] pyerr_check at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:60 [inlined]
+ [2] pyerr_check at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:64 [inlined]
+ [3] _handle_error(::String) at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:81
+ [4] macro expansion at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:95 [inlined]
+ [5] #110 at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:43 [inlined]
+ [6] disable_sigint at ./c.jl:446 [inlined]
+ [7] __pycall! at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:42 [inlined]
+ [8] _pycall!(::PyCall.PyObject, ::PyCall.PyObject, ::Tuple{}, ::Int64, ::Ptr{Nothing}) at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:29
+ [9] _pycall! at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:11 [inlined]
+ [10] #pycall#116 at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:83 [inlined]
+ [11] pycall at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:83 [inlined]
+ [12] gcf() at /home/posgrad/kalel/.julia/packages/PyPlot/4wzW1/src/PyPlot.jl:154
+ [13] _create_backend_figure(::Plots.Plot{Plots.PyPlotBackend}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/backends/pyplot.jl:333
+ [14] #invokelatest#1 at ./essentials.jl:709 [inlined]
+ [15] invokelatest at ./essentials.jl:708 [inlined]
+ [16] _plot_setup(::Plots.Plot{Plots.PyPlotBackend}, ::Dict{Symbol,Any}, ::Array{Dict{Symbol,Any},1}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/pipeline.jl:217
+ [17] _plot!(::Plots.Plot{Plots.PyPlotBackend}, ::Dict{Symbol,Any}, ::Tuple{}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/plot.jl:205
+ [18] #plot#138(::Base.Iterators.Pairs{Symbol,Symbol,Tuple{Symbol},NamedTuple{(:seriestype,),Tuple{Symbol}}}, ::typeof(plot)) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/plot.jl:57
+ [19] #plot at ./none:0 [inlined]
+ [20] #scatter#402 at /home/posgrad/kalel/.julia/packages/RecipesBase/G4s6f/src/RecipesBase.jl:393 [inlined]
+ [21] scatter at /home/posgrad/kalel/.julia/packages/RecipesBase/G4s6f/src/RecipesBase.jl:393 [inlined]
+ [22] plotRaster(::Array{Array{Float64,1},1}, ::Array{Int64,1}, ::Float64, ::Float64, ::String) at /home/jobs/kalel/LFP/plot_package.jl:108
+ [23] top-level scope at /home/jobs/kalel/LFP/LIF_v2.jl:76
+ [24] include at ./boot.jl:328 [inlined]
+ [25] include_relative(::Module, ::String) at ./loading.jl:1105
+ [26] include(::Module, ::String) at ./Base.jl:31
+ [27] exec_options(::Base.JLOptions) at ./client.jl:287
+ [28] _start() at ./client.jl:460
+in expression starting at /home/jobs/kalel/LFP/LIF_v2.jl:76
+Now I'll start integrating version 2.1. I have Ni = 100, Ne = 400. Running for t_exec = 2000.0, with t_trans = 0.0.
+2074.697922 seconds (46.13 M allocations: 3.350 GiB, 0.09% gc time)
+Finished integration.
+ERROR: LoadError: PyError ($(Expr(:escape, :(ccall(#= /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:43 =# @pysym(:PyObject_Call), PyPtr, (PyPtr, PyPtr, PyPtr), o, pyargsptr, kw))))) <class '_tkinter.TclError'>
+TclError('couldn\'t connect to display "localhost:16.0"')
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/pyplot.py", line 610, in gcf
+    return figure()
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/pyplot.py", line 545, in figure
+    **kwargs)
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/backend_bases.py", line 3261, in new_figure_manager
+    return cls.new_figure_manager_given_figure(num, fig)
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/backends/_backend_tk.py", line 950, in new_figure_manager_given_figure
+    window = tk.Tk(className="matplotlib")
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/tkinter/__init__.py", line 2023, in __init__
+    self.tk = _tkinter.create(screenName, baseName, className, interactive, wantobjects, useTk, sync, use)
+
+Stacktrace:
+ [1] pyerr_check at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:60 [inlined]
+ [2] pyerr_check at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:64 [inlined]
+ [3] _handle_error(::String) at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:81
+ [4] macro expansion at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:95 [inlined]
+ [5] #110 at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:43 [inlined]
+ [6] disable_sigint at ./c.jl:446 [inlined]
+ [7] __pycall! at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:42 [inlined]
+ [8] _pycall!(::PyCall.PyObject, ::PyCall.PyObject, ::Tuple{}, ::Int64, ::Ptr{Nothing}) at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:29
+ [9] _pycall! at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:11 [inlined]
+ [10] #pycall#116 at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:83 [inlined]
+ [11] pycall at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:83 [inlined]
+ [12] gcf() at /home/posgrad/kalel/.julia/packages/PyPlot/4wzW1/src/PyPlot.jl:154
+ [13] _create_backend_figure(::Plots.Plot{Plots.PyPlotBackend}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/backends/pyplot.jl:333
+ [14] #invokelatest#1 at ./essentials.jl:709 [inlined]
+ [15] invokelatest at ./essentials.jl:708 [inlined]
+ [16] _plot_setup(::Plots.Plot{Plots.PyPlotBackend}, ::Dict{Symbol,Any}, ::Array{Dict{Symbol,Any},1}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/pipeline.jl:217
+ [17] _plot!(::Plots.Plot{Plots.PyPlotBackend}, ::Dict{Symbol,Any}, ::Tuple{}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/plot.jl:205
+ [18] #plot#138(::Base.Iterators.Pairs{Symbol,Symbol,Tuple{Symbol},NamedTuple{(:seriestype,),Tuple{Symbol}}}, ::typeof(plot)) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/plot.jl:57
+ [19] #plot at ./none:0 [inlined]
+ [20] #scatter#402 at /home/posgrad/kalel/.julia/packages/RecipesBase/G4s6f/src/RecipesBase.jl:393 [inlined]
+ [21] scatter at /home/posgrad/kalel/.julia/packages/RecipesBase/G4s6f/src/RecipesBase.jl:393 [inlined]
+ [22] plotRaster(::Array{Array{Float64,1},1}, ::Array{Int64,1}, ::Float64, ::Float64, ::String) at /home/jobs/kalel/LFP/plot_package.jl:108
+ [23] top-level scope at /home/jobs/kalel/LFP/LIF_v2.jl:76
+ [24] include at ./boot.jl:328 [inlined]
+ [25] include_relative(::Module, ::String) at ./loading.jl:1105
+ [26] include(::Module, ::String) at ./Base.jl:31
+ [27] exec_options(::Base.JLOptions) at ./client.jl:287
+ [28] _start() at ./client.jl:460
+in expression starting at /home/jobs/kalel/LFP/LIF_v2.jl:76
+Now I'll start integrating version 2.1. I have Ni = 100, Ne = 400. Running for t_exec = 2000.0, with t_trans = 0.0.
+2052.607997 seconds (46.13 M allocations: 3.350 GiB, 0.08% gc time)
+Finished integration.
+ERROR: LoadError: LoadError: Failed to precompile DifferentialEquations [0c46a032-eb83-5123-abaf-570d42b7fbaa] to /home/users/kalel/.julia/compiled/v1.3/DifferentialEquations/UQdwS_7YeHL.ji.
+Stacktrace:
+ [1] error(::String) at ./error.jl:33
+ [2] compilecache(::Base.PkgId, ::String) at ./loading.jl:1283
+ [3] _require(::Base.PkgId) at ./loading.jl:1024
+ [4] require(::Base.PkgId) at ./loading.jl:922
+ [5] require(::Module, ::Symbol) at ./loading.jl:917
+ [6] include at ./boot.jl:328 [inlined]
+ [7] include_relative(::Module, ::String) at ./loading.jl:1105
+ [8] include(::Module, ::String) at ./Base.jl:31
+ [9] include(::String) at ./client.jl:424
+ [10] top-level scope at /home/users/kalel/LFP/LIF_v2.jl:3
+ [11] include at ./boot.jl:328 [inlined]
+ [12] include_relative(::Module, ::String) at ./loading.jl:1105
+ [13] include(::Module, ::String) at ./Base.jl:31
+ [14] exec_options(::Base.JLOptions) at ./client.jl:287
+ [15] _start() at ./client.jl:460
+in expression starting at /home/users/kalel/LFP/noise_package.jl:2
+in expression starting at /home/users/kalel/LFP/LIF_v2.jl:3
+ERROR: LoadError: LoadError: Failed to precompile DifferentialEquations [0c46a032-eb83-5123-abaf-570d42b7fbaa] to /home/users/kalel/.julia/compiled/v1.3/DifferentialEquations/UQdwS_7YeHL.ji.
+Stacktrace:
+ [1] error(::String) at ./error.jl:33
+ [2] compilecache(::Base.PkgId, ::String) at ./loading.jl:1283
+ [3] _require(::Base.PkgId) at ./loading.jl:1024
+ [4] require(::Base.PkgId) at ./loading.jl:922
+ [5] require(::Module, ::Symbol) at ./loading.jl:917
+ [6] include at ./boot.jl:328 [inlined]
+ [7] include_relative(::Module, ::String) at ./loading.jl:1105
+ [8] include(::Module, ::String) at ./Base.jl:31
+ [9] include(::String) at ./client.jl:424
+ [10] top-level scope at /home/users/kalel/LFP/LIF_v2.jl:3
+ [11] include at ./boot.jl:328 [inlined]
+ [12] include_relative(::Module, ::String) at ./loading.jl:1105
+ [13] include(::Module, ::String) at ./Base.jl:31
+ [14] exec_options(::Base.JLOptions) at ./client.jl:287
+ [15] _start() at ./client.jl:460
+in expression starting at /home/users/kalel/LFP/noise_package.jl:2
+in expression starting at /home/users/kalel/LFP/LIF_v2.jl:3
+ERROR: LoadError: LoadError: Failed to precompile DifferentialEquations [0c46a032-eb83-5123-abaf-570d42b7fbaa] to /home/users/kalel/.julia/compiled/v1.3/DifferentialEquations/UQdwS_7YeHL.ji.
+Stacktrace:
+ [1] error(::String) at ./error.jl:33
+ [2] compilecache(::Base.PkgId, ::String) at ./loading.jl:1283
+ [3] _require(::Base.PkgId) at ./loading.jl:1024
+ [4] require(::Base.PkgId) at ./loading.jl:922
+ [5] require(::Module, ::Symbol) at ./loading.jl:917
+ [6] include at ./boot.jl:328 [inlined]
+ [7] include_relative(::Module, ::String) at ./loading.jl:1105
+ [8] include(::Module, ::String) at ./Base.jl:31
+ [9] include(::String) at ./client.jl:424
+ [10] top-level scope at /home/users/kalel/LFP/LIF_v2.jl:3
+ [11] include at ./boot.jl:328 [inlined]
+ [12] include_relative(::Module, ::String) at ./loading.jl:1105
+ [13] include(::Module, ::String) at ./Base.jl:31
+ [14] exec_options(::Base.JLOptions) at ./client.jl:287
+ [15] _start() at ./client.jl:460
+in expression starting at /home/users/kalel/LFP/noise_package.jl:2
+in expression starting at /home/users/kalel/LFP/LIF_v2.jl:3
+ERROR: LoadError: LoadError: Failed to precompile DifferentialEquations [0c46a032-eb83-5123-abaf-570d42b7fbaa] to /home/users/kalel/.julia/compiled/v1.3/DifferentialEquations/UQdwS_7YeHL.ji.
+Stacktrace:
+ [1] error(::String) at ./error.jl:33
+ [2] compilecache(::Base.PkgId, ::String) at ./loading.jl:1283
+ [3] _require(::Base.PkgId) at ./loading.jl:1024
+ [4] require(::Base.PkgId) at ./loading.jl:922
+ [5] require(::Module, ::Symbol) at ./loading.jl:917
+ [6] include at ./boot.jl:328 [inlined]
+ [7] include_relative(::Module, ::String) at ./loading.jl:1105
+ [8] include(::Module, ::String) at ./Base.jl:31
+ [9] include(::String) at ./client.jl:424
+ [10] top-level scope at /home/users/kalel/LFP/LIF_v2.jl:3
+ [11] include at ./boot.jl:328 [inlined]
+ [12] include_relative(::Module, ::String) at ./loading.jl:1105
+ [13] include(::Module, ::String) at ./Base.jl:31
+ [14] exec_options(::Base.JLOptions) at ./client.jl:287
+ [15] _start() at ./client.jl:460
+in expression starting at /home/users/kalel/LFP/noise_package.jl:2
+in expression starting at /home/users/kalel/LFP/LIF_v2.jl:3
+Now I'll start integrating version 2.0. I have Ni = 1, Ne = 2. Running for t_exec = 2000.0, with t_trans = 0.0.
+  1.680992 seconds (3.64 M allocations: 268.761 MiB, 1.89% gc time)
+Finished integration.
+Now I'll start integrating version 2.0. I have Ni = 1, Ne = 2. Running for t_exec = 2000.0, with t_trans = 0.0.
+  1.620773 seconds (3.64 M allocations: 268.761 MiB, 1.98% gc time)
+Finished integration.
+Now I'll start integrating version 2.1. I have Ni = 100, Ne = 400. Running for t_exec = 40.0, with t_trans = 0.0.
+  1.712649 seconds (2.09 M allocations: 127.401 MiB, 1.98% gc time)
+Finished integration.
+media = 2.3284500000000006
+media = 0.014500000000000004
+media = 0.0001875
+ERROR: LoadError: PyError ($(Expr(:escape, :(ccall(#= /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:43 =# @pysym(:PyObject_Call), PyPtr, (PyPtr, PyPtr, PyPtr), o, pyargsptr, kw))))) <class '_tkinter.TclError'>
+TclError('couldn\'t connect to display "localhost:12.0"')
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/pyplot.py", line 610, in gcf
+    return figure()
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/pyplot.py", line 545, in figure
+    **kwargs)
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/backend_bases.py", line 3261, in new_figure_manager
+    return cls.new_figure_manager_given_figure(num, fig)
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/backends/_backend_tk.py", line 950, in new_figure_manager_given_figure
+    window = tk.Tk(className="matplotlib")
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/tkinter/__init__.py", line 2023, in __init__
+    self.tk = _tkinter.create(screenName, baseName, className, interactive, wantobjects, useTk, sync, use)
+
+Stacktrace:
+ [1] pyerr_check at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:60 [inlined]
+ [2] pyerr_check at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:64 [inlined]
+ [3] _handle_error(::String) at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:81
+ [4] macro expansion at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:95 [inlined]
+ [5] #110 at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:43 [inlined]
+ [6] disable_sigint at ./c.jl:446 [inlined]
+ [7] __pycall! at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:42 [inlined]
+ [8] _pycall!(::PyCall.PyObject, ::PyCall.PyObject, ::Tuple{}, ::Int64, ::Ptr{Nothing}) at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:29
+ [9] _pycall! at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:11 [inlined]
+ [10] #pycall#116 at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:83 [inlined]
+ [11] pycall at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:83 [inlined]
+ [12] gcf() at /home/posgrad/kalel/.julia/packages/PyPlot/4wzW1/src/PyPlot.jl:154
+ [13] _create_backend_figure(::Plots.Plot{Plots.PyPlotBackend}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/backends/pyplot.jl:333
+ [14] #invokelatest#1 at ./essentials.jl:709 [inlined]
+ [15] invokelatest at ./essentials.jl:708 [inlined]
+ [16] _plot_setup(::Plots.Plot{Plots.PyPlotBackend}, ::Dict{Symbol,Any}, ::Array{Dict{Symbol,Any},1}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/pipeline.jl:217
+ [17] _plot!(::Plots.Plot{Plots.PyPlotBackend}, ::Dict{Symbol,Any}, ::Tuple{}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/plot.jl:205
+ [18] #plot#138(::Base.Iterators.Pairs{Symbol,Symbol,Tuple{Symbol},NamedTuple{(:seriestype,),Tuple{Symbol}}}, ::typeof(plot)) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/plot.jl:57
+ [19] #plot at ./none:0 [inlined]
+ [20] #scatter#402 at /home/posgrad/kalel/.julia/packages/RecipesBase/G4s6f/src/RecipesBase.jl:393 [inlined]
+ [21] scatter at /home/posgrad/kalel/.julia/packages/RecipesBase/G4s6f/src/RecipesBase.jl:393 [inlined]
+ [22] plotRaster(::Array{Array{Float64,1},1}, ::Array{Int64,1}, ::Float64, ::Float64, ::String) at /home/jobs/kalel/LFP/plot_package.jl:108
+ [23] top-level scope at /home/jobs/kalel/LFP/LIF_v2.jl:76
+ [24] include at ./boot.jl:328 [inlined]
+ [25] include_relative(::Module, ::String) at ./loading.jl:1105
+ [26] include(::Module, ::String) at ./Base.jl:31
+ [27] exec_options(::Base.JLOptions) at ./client.jl:287
+ [28] _start() at ./client.jl:460
+in expression starting at /home/jobs/kalel/LFP/LIF_v2.jl:76
+Now I'll start integrating version 2.1. I have Ni = 100, Ne = 400. Running for t_exec = 40.0, with t_trans = 0.0.
+  1.714260 seconds (2.09 M allocations: 127.356 MiB, 2.37% gc time)
+Finished integration.
+
+signal (15): Terminado
+in expression starting at /home/jobs/kalel/LFP/noise_package.jl:2
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+jl_task_get_next at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+poptaskref at ./task.jl:660
+wait at ./task.jl:667
+task_done_hook at ./task.jl:401
+unknown function (ip: 0x7f90e9779afd)
+unknown function (ip: 0x7f90e979ad83)
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0xffffffffffffffff)
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+jl_task_get_next at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+poptaskref at ./task.jl:660
+wait at ./task.jl:667
+task_done_hook at ./task.jl:401
+unknown function (ip: 0x7f90e9779afd)
+unknown function (ip: 0x7f90e979ad83)
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0xffffffffffffffff)
+unknown function (ip: 0x7f90e9756be0)
+unknown function (ip: 0x7f90e9765c87)
+unknown function (ip: 0x7f90e977f309)
+unknown function (ip: 0x7f90e9784d5d)
+jl_restore_incremental at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+_include_from_serialized at ./loading.jl:676
+_require_search_from_serialized at ./loading.jl:776
+_tryrequire_from_serialized at ./loading.jl:707
+_require_search_from_serialized at ./loading.jl:765
+_tryrequire_from_serialized at ./loading.jl:707
+_require_search_from_serialized at ./loading.jl:765
+_tryrequire_from_serialized at ./loading.jl:707
+_require_search_from_serialized at ./loading.jl:765
+_require at ./loading.jl:1001
+require at ./loading.jl:922
+require at ./loading.jl:917
+unknown function (ip: 0x7f90e978d593)
+unknown function (ip: 0x7f90e978e6b6)
+unknown function (ip: 0x7f90e976c7ad)
+jl_load at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+include at ./boot.jl:328 [inlined]
+include_relative at ./loading.jl:1105
+include at ./Base.jl:31
+include at ./client.jl:424
+unknown function (ip: 0x7f90e98acf7c)
+unknown function (ip: 0x7f90e98acc49)
+unknown function (ip: 0x7f90e98ad0b0)
+unknown function (ip: 0x7f90e98ad668)
+unknown function (ip: 0x7f90e98ade8f)
+unknown function (ip: 0xfffffffffffffffe)
+unknown function (ip: 0x7f90d79ea00f)
+unknown function (ip: 0xffffffffffffffff)
+unknown function (ip: 0x7f90e98ae25e)
+unknown function (ip: 0x7f90e978e276)
+unknown function (ip: 0x7f90e976c7ad)
+jl_load at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+include at ./boot.jl:328 [inlined]
+include_relative at ./loading.jl:1105
+include at ./Base.jl:31
+exec_options at ./client.jl:287
+_start at ./client.jl:460
+jfptr__start_2084.clone_1 at /usr/lib/x86_64-linux-gnu/julia/sys.so (unknown line)
+unknown function (ip: 0x564717efd755)
+unknown function (ip: 0x564717efd332)
+__libc_start_main at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0x564717efd3d9)
+unknown function (ip: 0xffffffffffffffff)
+Allocations: 34544248 (Pool: 34541633; Big: 2615); GC: 8
+ERROR: LoadError: PyError ($(Expr(:escape, :(ccall(#= /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:43 =# @pysym(:PyObject_Call), PyPtr, (PyPtr, PyPtr, PyPtr), o, pyargsptr, kw))))) <class '_tkinter.TclError'>
+TclError('couldn\'t connect to display "localhost:12.0"')
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/pyplot.py", line 610, in gcf
+    return figure()
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/pyplot.py", line 545, in figure
+    **kwargs)
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/backend_bases.py", line 3261, in new_figure_manager
+    return cls.new_figure_manager_given_figure(num, fig)
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/backends/_backend_tk.py", line 950, in new_figure_manager_given_figure
+    window = tk.Tk(className="matplotlib")
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/tkinter/__init__.py", line 2023, in __init__
+    self.tk = _tkinter.create(screenName, baseName, className, interactive, wantobjects, useTk, sync, use)
+
+Stacktrace:
+ [1] pyerr_check at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:60 [inlined]
+ [2] pyerr_check at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:64 [inlined]
+ [3] _handle_error(::String) at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:81
+ [4] macro expansion at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:95 [inlined]
+ [5] #110 at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:43 [inlined]
+ [6] disable_sigint at ./c.jl:446 [inlined]
+ [7] __pycall! at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:42 [inlined]
+ [8] _pycall!(::PyCall.PyObject, ::PyCall.PyObject, ::Tuple{}, ::Int64, ::Ptr{Nothing}) at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:29
+ [9] _pycall! at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:11 [inlined]
+ [10] #pycall#116 at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:83 [inlined]
+ [11] pycall at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:83 [inlined]
+ [12] gcf() at /home/posgrad/kalel/.julia/packages/PyPlot/4wzW1/src/PyPlot.jl:154
+ [13] _create_backend_figure(::Plots.Plot{Plots.PyPlotBackend}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/backends/pyplot.jl:333
+ [14] #invokelatest#1 at ./essentials.jl:709 [inlined]
+ [15] invokelatest at ./essentials.jl:708 [inlined]
+ [16] _plot_setup(::Plots.Plot{Plots.PyPlotBackend}, ::Dict{Symbol,Any}, ::Array{Dict{Symbol,Any},1}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/pipeline.jl:217
+ [17] _plot!(::Plots.Plot{Plots.PyPlotBackend}, ::Dict{Symbol,Any}, ::Tuple{}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/plot.jl:205
+ [18] #plot#138(::Base.Iterators.Pairs{Symbol,Symbol,Tuple{Symbol},NamedTuple{(:seriestype,),Tuple{Symbol}}}, ::typeof(plot)) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/plot.jl:57
+ [19] #plot at ./none:0 [inlined]
+ [20] #scatter#402 at /home/posgrad/kalel/.julia/packages/RecipesBase/G4s6f/src/RecipesBase.jl:393 [inlined]
+ [21] scatter at /home/posgrad/kalel/.julia/packages/RecipesBase/G4s6f/src/RecipesBase.jl:393 [inlined]
+ [22] plotRaster(::Array{Array{Float64,1},1}, ::Array{Int64,1}, ::Float64, ::Float64, ::String) at /home/jobs/kalel/LFP/plot_package.jl:108
+ [23] top-level scope at /home/jobs/kalel/LFP/LIF_v2.jl:76
+ [24] include at ./boot.jl:328 [inlined]
+ [25] include_relative(::Module, ::String) at ./loading.jl:1105
+ [26] include(::Module, ::String) at ./Base.jl:31
+ [27] exec_options(::Base.JLOptions) at ./client.jl:287
+ [28] _start() at ./client.jl:460
+in expression starting at /home/jobs/kalel/LFP/LIF_v2.jl:76
+Now I'll start integrating version 2.1. I have Ni = 100, Ne = 400. Running for t_exec = 2000.0, with t_trans = 0.0.
+204.740883 seconds (46.89 M allocations: 3.457 GiB, 0.44% gc time)
+Finished integration.
+ERROR: LoadError: PyError ($(Expr(:escape, :(ccall(#= /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:43 =# @pysym(:PyObject_Call), PyPtr, (PyPtr, PyPtr, PyPtr), o, pyargsptr, kw))))) <class '_tkinter.TclError'>
+TclError('couldn\'t connect to display "localhost:12.0"')
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/pyplot.py", line 610, in gcf
+    return figure()
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/pyplot.py", line 545, in figure
+    **kwargs)
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/backend_bases.py", line 3261, in new_figure_manager
+    return cls.new_figure_manager_given_figure(num, fig)
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/site-packages/matplotlib/backends/_backend_tk.py", line 950, in new_figure_manager_given_figure
+    window = tk.Tk(className="matplotlib")
+  File "/home/posgrad/kalel/.julia/conda/3/lib/python3.7/tkinter/__init__.py", line 2023, in __init__
+    self.tk = _tkinter.create(screenName, baseName, className, interactive, wantobjects, useTk, sync, use)
+
+Stacktrace:
+ [1] pyerr_check at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:60 [inlined]
+ [2] pyerr_check at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:64 [inlined]
+ [3] _handle_error(::String) at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:81
+ [4] macro expansion at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/exception.jl:95 [inlined]
+ [5] #110 at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:43 [inlined]
+ [6] disable_sigint at ./c.jl:446 [inlined]
+ [7] __pycall! at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:42 [inlined]
+ [8] _pycall!(::PyCall.PyObject, ::PyCall.PyObject, ::Tuple{}, ::Int64, ::Ptr{Nothing}) at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:29
+ [9] _pycall! at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:11 [inlined]
+ [10] #pycall#116 at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:83 [inlined]
+ [11] pycall at /home/posgrad/kalel/.julia/packages/PyCall/zqDXB/src/pyfncall.jl:83 [inlined]
+ [12] gcf() at /home/posgrad/kalel/.julia/packages/PyPlot/4wzW1/src/PyPlot.jl:154
+ [13] _create_backend_figure(::Plots.Plot{Plots.PyPlotBackend}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/backends/pyplot.jl:333
+ [14] #invokelatest#1 at ./essentials.jl:709 [inlined]
+ [15] invokelatest at ./essentials.jl:708 [inlined]
+ [16] _plot_setup(::Plots.Plot{Plots.PyPlotBackend}, ::Dict{Symbol,Any}, ::Array{Dict{Symbol,Any},1}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/pipeline.jl:217
+ [17] _plot!(::Plots.Plot{Plots.PyPlotBackend}, ::Dict{Symbol,Any}, ::Tuple{}) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/plot.jl:205
+ [18] #plot#138(::Base.Iterators.Pairs{Symbol,Symbol,Tuple{Symbol},NamedTuple{(:seriestype,),Tuple{Symbol}}}, ::typeof(plot)) at /home/posgrad/kalel/.julia/packages/Plots/XpHkc/src/plot.jl:57
+ [19] #plot at ./none:0 [inlined]
+ [20] #scatter#402 at /home/posgrad/kalel/.julia/packages/RecipesBase/G4s6f/src/RecipesBase.jl:393 [inlined]
+ [21] scatter at /home/posgrad/kalel/.julia/packages/RecipesBase/G4s6f/src/RecipesBase.jl:393 [inlined]
+ [22] plotRaster(::Array{Array{Float64,1},1}, ::Array{Int64,1}, ::Float64, ::Float64, ::String) at /home/jobs/kalel/LFP/plot_package.jl:108
+ [23] top-level scope at /home/jobs/kalel/LFP/LIF_v2.jl:76
+ [24] include at ./boot.jl:328 [inlined]
+ [25] include_relative(::Module, ::String) at ./loading.jl:1105
+ [26] include(::Module, ::String) at ./Base.jl:31
+ [27] exec_options(::Base.JLOptions) at ./client.jl:287
+ [28] _start() at ./client.jl:460
+in expression starting at /home/jobs/kalel/LFP/LIF_v2.jl:76
+Now I'll start integrating version 2.2. I have Ni = 100, Ne = 400. Running for t_exec = 2000.0, with t_trans = 0.0.
+1234.501651 seconds (47.22 M allocations: 3.462 GiB, 0.13% gc time)
+Finished integration.
+
+signal (15): Terminated
+in expression starting at /home/users/kalel/LFP/noise_package.jl:2
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+jl_task_get_next at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+poptaskref at ./task.jl:660
+wait at ./task.jl:667
+task_done_hook at ./task.jl:401
+unknown function (ip: 0x7f93354ffafd)
+unknown function (ip: 0x7f9335520d83)
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0xffffffffffffffff)
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+jl_task_get_next at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+poptaskref at ./task.jl:660
+wait at ./task.jl:667
+task_done_hook at ./task.jl:401
+unknown function (ip: 0x7f93354ffafd)
+unknown function (ip: 0x7f9335520d83)
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0xffffffffffffffff)
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+jl_task_get_next at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+poptaskref at ./task.jl:660
+wait at ./task.jl:667
+task_done_hook at ./task.jl:401
+unknown function (ip: 0x7f93354ffafd)
+unknown function (ip: 0x7f9335520d83)
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0xffffffffffffffff)
+unknown function (ip: 0x7f93355181cd)
+unknown function (ip: 0x7f93354dd3c0)
+unknown function (ip: 0x7f93354dee07)
+unknown function (ip: 0x7f93354dece3)
+unknown function (ip: 0x7f93354ded40)
+unknown function (ip: 0x7f93354ded9b)
+unknown function (ip: 0x7f93354ded9b)
+unknown function (ip: 0x7f93354de703)
+unknown function (ip: 0x7f93354dee27)
+jl_instantiate_unionall at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+unknown function (ip: 0x7f9335533799)
+unknown function (ip: 0x7f9335534603)
+unknown function (ip: 0x7f9335537926)
+unknown function (ip: 0x7f93355342ca)
+unknown function (ip: 0x7f933553462b)
+unknown function (ip: 0x7f9335537805)
+unknown function (ip: 0x7f933553811b)
+unknown function (ip: 0x7f933553831c)
+unknown function (ip: 0x7f933553fb65)
+unknown function (ip: 0x7f93354eb7e3)
+unknown function (ip: 0x7f93354ed3e6)
+unknown function (ip: 0x7f93354ed617)
+unknown function (ip: 0x7f93354e3f2e)
+jl_method_table_insert at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+unknown function (ip: 0x7f933550acb7)
+jl_restore_incremental at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+_include_from_serialized at ./loading.jl:676
+_require_search_from_serialized at ./loading.jl:776
+_tryrequire_from_serialized at ./loading.jl:707
+_require_search_from_serialized at ./loading.jl:765
+_require at ./loading.jl:1001
+require at ./loading.jl:922
+require at ./loading.jl:917
+unknown function (ip: 0x7f9335513593)
+unknown function (ip: 0x7f93355146b6)
+unknown function (ip: 0x7f93354f27ad)
+jl_load at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+include at ./boot.jl:328 [inlined]
+include_relative at ./loading.jl:1105
+include at ./Base.jl:31
+include at ./client.jl:424
+unknown function (ip: 0x7f9335632f7c)
+unknown function (ip: 0x7f9335632c49)
+unknown function (ip: 0x7f93356330b0)
+unknown function (ip: 0x7f9335633668)
+unknown function (ip: 0x7f9335633e8f)
+unknown function (ip: 0xfffffffffffffffe)
+unknown function (ip: 0x7f932372200f)
+unknown function (ip: 0xffffffffffffffff)
+unknown function (ip: 0x7f933563425e)
+unknown function (ip: 0x7f9335514276)
+unknown function (ip: 0x7f93354f27ad)
+jl_load at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+include at ./boot.jl:328 [inlined]
+include_relative at ./loading.jl:1105
+include at ./Base.jl:31
+exec_options at ./client.jl:287
+_start at ./client.jl:460
+jfptr__start_2084.clone_1 at /usr/lib/x86_64-linux-gnu/julia/sys.so (unknown line)
+unknown function (ip: 0x5582c1d7c755)
+unknown function (ip: 0x5582c1d7c332)
+__libc_start_main at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0x5582c1d7c3d9)
+unknown function (ip: 0xffffffffffffffff)
+Allocations: 5035206 (Pool: 5033827; Big: 1379); GC: 5
+Now I'll start integrating version 2.0. I have Ni = 100, Ne = 400. Running for t_exec = 2000.0, with t_trans = 0.0.
+139.458082 seconds (46.81 M allocations: 3.454 GiB, 0.25% gc time)
+Finished integration.
+Now I'll start integrating version 2.0. I have Ni = 100, Ne = 400. Running for t_exec = 2000.0, with t_trans = 0.0.
+202.575998 seconds (43.40 M allocations: 3.114 GiB, 0.13% gc time)
+Finished integration.
+Now I'll start integrating version 2.1. I have Ni = 100, Ne = 400. Running for t_exec = 2000.0, with t_trans = 0.0.
+961.499149 seconds (43.41 M allocations: 3.114 GiB, 0.03% gc time)
+Finished integration.
+Now I'll start integrating version 2.2. I have Ni = 100, Ne = 400. Running for t_exec = 2000.0, with t_trans = 0.0.
+1012.445045 seconds (43.41 M allocations: 3.114 GiB, 0.03% gc time)
+Finished integration.
+Now I'll start integrating version 2.05. I have Ni = 100, Ne = 400. Running for t_exec = 2000.0, with t_trans = 0.0.
+914.860084 seconds (43.41 M allocations: 3.114 GiB, 0.03% gc time)
+Finished integration.
+Now I'll start integrating version 2.05. I have Ni = 100, Ne = 400. Running for t_exec = 3000.0, with t_trans = 0.0.
+493.633520 seconds (71.73 M allocations: 5.331 GiB, 0.13% gc time)
+Finished integration.
+Now I'll start integrating version 2.1. I have Ni = 100, Ne = 400. Running for t_exec = 3000.0, with t_trans = 0.0.
+571.198492 seconds (72.26 M allocations: 5.339 GiB, 0.09% gc time)
+Finished integration.
+Now I'll start integrating version 2.2. I have Ni = 100, Ne = 400. Running for t_exec = 3000.0, with t_trans = 0.0.
+585.029212 seconds (71.84 M allocations: 5.333 GiB, 0.11% gc time)
+Finished integration.
+Now I'll start integrating version 2.1. I have Ni = 1000, Ne = 4000. Running for t_exec = 3000.0, with t_trans = 0.0.
+8115.574877 seconds (892.34 M allocations: 48.381 GiB, 0.03% gc time)
+Finished integration.
+Now I'll start integrating version 2.1. I have Ni = 1000, Ne = 4000. Running for t_exec = 3000.0, with t_trans = 0.0.
+25585.708397 seconds (891.01 M allocations: 48.361 GiB, 0.01% gc time)
+Finished integration.
+ERROR: LoadError: LoadError: syntax: incomplete: "function" at /home/users/kalel/LFP/network_package.jl:94 requires end
+Stacktrace:
+ [1] top-level scope at /home/users/kalel/LFP/network_package.jl:94
+ [2] include at ./boot.jl:328 [inlined]
+ [3] include_relative(::Module, ::String) at ./loading.jl:1105
+ [4] include(::Module, ::String) at ./Base.jl:31
+ [5] include(::String) at ./client.jl:424
+ [6] top-level scope at /home/users/kalel/LFP/LIF_v2.jl:2
+ [7] include at ./boot.jl:328 [inlined]
+ [8] include_relative(::Module, ::String) at ./loading.jl:1105
+ [9] include(::Module, ::String) at ./Base.jl:31
+ [10] exec_options(::Base.JLOptions) at ./client.jl:287
+ [11] _start() at ./client.jl:460
+in expression starting at /home/users/kalel/LFP/network_package.jl:94
+in expression starting at /home/users/kalel/LFP/LIF_v2.jl:2
+ERROR: LoadError: LoadError: syntax: incomplete: "function" at /home/users/kalel/LFP/network_package.jl:94 requires end
+Stacktrace:
+ [1] top-level scope at /home/users/kalel/LFP/network_package.jl:94
+ [2] include at ./boot.jl:328 [inlined]
+ [3] include_relative(::Module, ::String) at ./loading.jl:1105
+ [4] include(::Module, ::String) at ./Base.jl:31
+ [5] include(::String) at ./client.jl:424
+ [6] top-level scope at /home/users/kalel/LFP/LIF_v2.jl:2
+ [7] include at ./boot.jl:328 [inlined]
+ [8] include_relative(::Module, ::String) at ./loading.jl:1105
+ [9] include(::Module, ::String) at ./Base.jl:31
+ [10] exec_options(::Base.JLOptions) at ./client.jl:287
+ [11] _start() at ./client.jl:460
+in expression starting at /home/users/kalel/LFP/network_package.jl:94
+in expression starting at /home/users/kalel/LFP/LIF_v2.jl:2
+Now I'll start integrating version 2.1. I have Ni = 100, Ne = 400. Running for t_exec = 3000.0, with t_trans = 0.0.
+644.039293 seconds (70.40 M allocations: 5.165 GiB, 0.08% gc time)
+Finished integration.
+60000
+Now I'll start integrating version 2.1. I have Ni = 100, Ne = 400. Running for t_exec = 3000.0, with t_trans = 0.0.
+1511.650935 seconds (70.15 M allocations: 5.161 GiB, 0.04% gc time)
+Finished integration.
+60000
+
+signal (15): Terminated
+in expression starting at /home/users/kalel/LFP/noise_package.jl:2
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+jl_task_get_next at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+poptaskref at ./task.jl:660
+wait at ./task.jl:667
+task_done_hook at ./task.jl:401
+unknown function (ip: 0x7fc9e86f3afd)
+unknown function (ip: 0x7fc9e8714d83)
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0xffffffffffffffff)
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+jl_task_get_next at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+poptaskref at ./task.jl:660
+wait at ./task.jl:667
+task_done_hook at ./task.jl:401
+unknown function (ip: 0x7fc9e86f3afd)
+unknown function (ip: 0x7fc9e8714d83)
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0xffffffffffffffff)
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+jl_task_get_next at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+poptaskref at ./task.jl:660
+wait at ./task.jl:667
+task_done_hook at ./task.jl:401
+unknown function (ip: 0x7fc9e86f3afd)
+unknown function (ip: 0x7fc9e8714d83)
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0xffffffffffffffff)
+_ZN4llvm16LiveRangeUpdater3addENS_9LiveRange7SegmentE at /usr/bin/../lib/x86_64-linux-gnu/libLLVM-8.so.1 (unknown line)
+_ZN4llvm9LiveRange4joinERS0_PKiS3_RNS_15SmallVectorImplIPNS_6VNInfoEEE at /usr/bin/../lib/x86_64-linux-gnu/libLLVM-8.so.1 (unknown line)
+unknown function (ip: 0x7fc9e55025f4)
+unknown function (ip: 0x7fc9e5500555)
+unknown function (ip: 0x7fc9e54ffb26)
+_ZN4llvm19MachineFunctionPass13runOnFunctionERNS_8FunctionE at /usr/bin/../lib/x86_64-linux-gnu/libLLVM-8.so.1 (unknown line)
+_ZN4llvm13FPPassManager13runOnFunctionERNS_8FunctionE at /usr/bin/../lib/x86_64-linux-gnu/libLLVM-8.so.1 (unknown line)
+_ZN4llvm13FPPassManager11runOnModuleERNS_6ModuleE at /usr/bin/../lib/x86_64-linux-gnu/libLLVM-8.so.1 (unknown line)
+_ZN4llvm6legacy15PassManagerImpl3runERNS_6ModuleE at /usr/bin/../lib/x86_64-linux-gnu/libLLVM-8.so.1 (unknown line)
+unknown function (ip: 0x7fc9e879763d)
+unknown function (ip: 0x7fc9e8799e64)
+unknown function (ip: 0x7fc9e879a459)
+unknown function (ip: 0x7fc9e87542aa)
+unknown function (ip: 0x7fc9e8781d93)
+unknown function (ip: 0x7fc9e86de10b)
+jl_apply_generic at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+unknown function (ip: 0x7fc9e8826f7c)
+unknown function (ip: 0x7fc9e8826c49)
+unknown function (ip: 0x7fc9e88270b0)
+unknown function (ip: 0x7fc9e8827668)
+unknown function (ip: 0x7fc9e8827e8f)
+unknown function (ip: 0xfffffffffffffffe)
+unknown function (ip: 0x7fc94bbd9d0f)
+unknown function (ip: 0x5)
+unknown function (ip: 0x7fc9e882825e)
+unknown function (ip: 0x7fc9e8708276)
+jl_toplevel_eval_in at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+eval at ./boot.jl:330 [inlined]
+eval at /home/users/kalel/.julia/packages/DiffEqBase/T10lH/src/DiffEqBase.jl:1 [inlined]
+#499 at /home/users/kalel/.julia/packages/Requires/qy6zC/src/require.jl:85
+unknown function (ip: 0x7fc9d0eaa73c)
+err at /home/users/kalel/.julia/packages/Requires/qy6zC/src/require.jl:42
+#498 at /home/users/kalel/.julia/packages/Requires/qy6zC/src/require.jl:84
+unknown function (ip: 0x7fc9d0eaa69c)
+withpath at /home/users/kalel/.julia/packages/Requires/qy6zC/src/require.jl:32
+#497 at /home/users/kalel/.julia/packages/Requires/qy6zC/src/require.jl:83
+unknown function (ip: 0x7fc9d0eaa62c)
+listenpkg at /home/users/kalel/.julia/packages/Requires/qy6zC/src/require.jl:15
+macro expansion at /home/users/kalel/.julia/packages/Requires/qy6zC/src/require.jl:81 [inlined]
+__init__ at /home/users/kalel/.julia/packages/DiffEqBase/T10lH/src/init.jl:23
+unknown function (ip: 0x7fc9d0eaa52c)
+unknown function (ip: 0x7fc9e8707949)
+jl_init_restored_modules at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+_include_from_serialized at ./loading.jl:692
+_require_search_from_serialized at ./loading.jl:776
+_tryrequire_from_serialized at ./loading.jl:707
+_require_search_from_serialized at ./loading.jl:765
+_tryrequire_from_serialized at ./loading.jl:707
+_require_search_from_serialized at ./loading.jl:765
+_require at ./loading.jl:1001
+require at ./loading.jl:922
+require at ./loading.jl:917
+unknown function (ip: 0x7fc9e8707593)
+unknown function (ip: 0x7fc9e87086b6)
+unknown function (ip: 0x7fc9e86e67ad)
+jl_load at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+include at ./boot.jl:328 [inlined]
+include_relative at ./loading.jl:1105
+include at ./Base.jl:31
+include at ./client.jl:424
+unknown function (ip: 0x7fc9e8826f7c)
+unknown function (ip: 0x7fc9e8826c49)
+unknown function (ip: 0x7fc9e88270b0)
+unknown function (ip: 0x7fc9e8827668)
+unknown function (ip: 0x7fc9e8827e8f)
+unknown function (ip: 0xfffffffffffffffe)
+unknown function (ip: 0x7fc9d6cfd98f)
+unknown function (ip: 0xffffffffffffffff)
+unknown function (ip: 0x7fc9e882825e)
+unknown function (ip: 0x7fc9e8708276)
+unknown function (ip: 0x7fc9e86e67ad)
+jl_load at /usr/bin/../lib/x86_64-linux-gnu/libjulia.so.1 (unknown line)
+include at ./boot.jl:328 [inlined]
+include_relative at ./loading.jl:1105
+include at ./Base.jl:31
+exec_options at ./client.jl:287
+_start at ./client.jl:460
+jfptr__start_2084.clone_1 at /usr/lib/x86_64-linux-gnu/julia/sys.so (unknown line)
+unknown function (ip: 0x55c6e7d8f755)
+unknown function (ip: 0x55c6e7d8f332)
+__libc_start_main at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0x55c6e7d8f3d9)
+unknown function (ip: 0xffffffffffffffff)
+Allocations: 33708652 (Pool: 33706186; Big: 2466); GC: 7
+Now I'll start integrating version 2.1. I have Ni = 1, Ne = 2. Running for t_exec = 3000.0, with t_trans = 0.0.
+  3.605482 seconds (10.01 M allocations: 896.598 MiB, 3.87% gc time)
+Finished integration.
+60000
+Now I'll start integrating version 2.1. I have Ni = 1, Ne = 2. Running for t_exec = 3000.0, with t_trans = 0.0.
+  3.488395 seconds (9.97 M allocations: 895.949 MiB, 3.33% gc time)
+Finished integration.
+60000
+Now I'll start integrating version 2.1. I have Ni = 100, Ne = 400. Running for t_exec = 3000.0, with t_trans = 0.0.
+646.252785 seconds (70.13 M allocations: 5.160 GiB, 0.08% gc time)
+Finished integration.
+60000
+Now I'll start integrating version 2.1. I have Ni = 100, Ne = 400. Running for t_exec = 3000.0, with t_trans = 0.0.
+1512.208555 seconds (70.12 M allocations: 5.160 GiB, 0.03% gc time)
+Finished integration.
+60000
+Now I'll start integrating version 2.05. I have Ni = 1000, Ne = 4000. Running for t_exec = 3000.0, with t_trans = 0.0.
+7744.078556 seconds (891.34 M allocations: 48.366 GiB, 0.03% gc time)
+Finished integration.
+60000
+Now I'll start integrating version 2.075. I have Ni = 1000, Ne = 4000. Running for t_exec = 3000.0, with t_trans = 0.0.
+10609.573569 seconds (891.84 M allocations: 48.374 GiB, 0.03% gc time)
+Finished integration.
+60000
+Now I'll start integrating version 2.1. I have Ni = 1000, Ne = 4000. Running for t_exec = 3000.0, with t_trans = 0.0.
+8786.776024 seconds (891.22 M allocations: 48.365 GiB, 0.03% gc time)
+Finished integration.
+60000
+Now I'll start integrating version 2.1. I have Ni = 1000, Ne = 4000. Running for t_exec = 3000.0, with t_trans = 0.0.
+19872.056519 seconds (887.63 M allocations: 48.021 GiB, 0.01% gc time)
+Finished integration.
+60000
