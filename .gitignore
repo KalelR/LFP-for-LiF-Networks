@@ -1,1 +1,4 @@
-data/*
+data/
+results/
+*.png
+*.dat
