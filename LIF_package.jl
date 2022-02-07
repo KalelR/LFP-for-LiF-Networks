@@ -13,12 +13,6 @@ function calc_gij(t::Float64, tt::Array{Array{Float64, 1}, 1}, v_numSpikes::Arra
             if (t-t0-D >= 0) #--considers delay
                 g_aux = g(t, t0, g0, tau_d, tau_r, D)
                 g_ij += g_aux;
-                # if(g_aux <= 10^-4)
-                #     break 
-                # end
-            # if(j == 1 && idx == 1) println("t = ", t, ", t0 = ", t0, " , gij =  ",  round(g_ij, digits=4), ", g0 = ", g0, ", (t-t0-D) =  ", (t-t0-D), " ", tau_d, " ", tau_r, " ", idx_sp, " ", v_numSpikes[j], " ", j, " ", idx) end
-            # else 
-                # println("-------- EITA, NAO ERA PARA ENTRAR AQUI!!!! ----------", t-t0 >= 0)
             end
         end
     end
@@ -33,16 +27,10 @@ function calc_gij2!(t::Float64, tt::Array{Array{Float64,1}, 1}, v_numSpikes::Arr
         for idx_sp = v_numSpikes[i]:-1:v_numSpikes[i]-30
             if(idx_sp <= 0) break end
             t0 = tt[i][idx_sp];
-            # if(i == 1) println("t = ", t, "gij =  ",  g_ij, ", g0 = ", g0, ", (t-t0-D) =  ", (t-t0-D), " ", tau_d, " ", tau_r, " ", t0) end
             if (t-t0-D) >= 0 #--considers delay
                 g_aux = g(t, t0, g0, tau_d, tau_r, D)
                 g_ij += g_aux;
-                # if(i == 1) println("t = ", t, ", t0 = ", t0, " , gij =  ",  round(g_ij, digits=4), ", g0 = ", g0, ", (t-t0-D) =  ", (t-t0-D), " ", tau_d, " ", tau_r, " ", idx_sp, " ", v_numSpikes[i], " ", i, " ") end
-                # if(g_aux <= 10^-4)
-                #     break 
-                # end
-            # else   
-                # break
+                # if(g_aux <= 10^-4) break end
             end
         end
     end
