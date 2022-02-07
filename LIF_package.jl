@@ -58,9 +58,6 @@ end
 #     return g_ij
 # end
 
-# N = 500;
-# m_Iext = [ [] for i=1:N]
-# m_t = [ [] for i=1:N]
 
 #funçao para calcular a corrente sinaptica chengaod no neuronio i; recebe o indice i, o potencial V(i), a matriz das matrizes de adj, o tempo e a matriz com os tempso dos spikes, idxf: how many times this function has been called for the same t (in 4th order RK4 it is called 4 times per t)
 function calcIsyn!(i::Int64, N::Int64, V::Float64, m3_adj::Array{ Array{Array{Int64,1},1}, 1},  t::Float64, tt::Array{Array{Float64, 1}, 1}, v_numSpikes::Array{Int64, 1}, m_tS_ext::Array{Array{Float64,1},1}, v_numS_ext::Array{Int64,1}, m_Ia::Array{Float64,2}, m_Ig::Array{Float64,2}, aux::Int64, idxf::Int64)
@@ -68,7 +65,6 @@ function calcIsyn!(i::Int64, N::Int64, V::Float64, m3_adj::Array{ Array{Array{In
     Isyn = 0.0
     Ia = 0.; Ig =  0.
     #--for recurrent connections (inside)
-    # println("--começo ", t, " ", i)
     for idx_syn = 1:2    #loop sobre os tipos de receptors (1 = ampa, 2 = gaba)
         v_adj = m3_adj[idx_syn][i] #seleciona a matriz de adjacencia (com os k e o g_0 associado a cada sinapse) ----- THIS WAY IS DANGEROUS, should use VIEW
 
@@ -87,7 +83,6 @@ function calcIsyn!(i::Int64, N::Int64, V::Float64, m3_adj::Array{ Array{Array{In
         Er = 0.;
         τ_L = 1. #ms
 
-        # if (i == 2) println(v_adj, " ", idx_syn) end
         for j ∈ v_adj #coupling loop
             if(j == -1) continue end #continue e break dao na mesma aqui
             g_ij = @fastmath calc_gij(t, tt, v_numSpikes, j, τ_L, g0, τ_d, τ_r, idxf)::Float64
@@ -97,15 +92,12 @@ function calcIsyn!(i::Int64, N::Int64, V::Float64, m3_adj::Array{ Array{Array{In
         end
         if(idx_syn == 1) 
              Ia = Isyn 
-            #  println(Ia, " " , Isyn)
         else 
                 Ig = Isyn - Ia
-            #  println(Ig, " " , Isyn)
         end
 
 
     end
-    # println("--estou aqui ", t, " ", i)
     
     #---now for external input
     isExc = i in v_inh ? false : true
@@ -120,8 +112,6 @@ function calcIsyn!(i::Int64, N::Int64, V::Float64, m3_adj::Array{ Array{Array{In
     # I_ij = g_ij*(V - Er)
     Isyn += I_ij;
     if (idxf == 1)
-        # push!(m_Iext[i], I_ij)
-        # push!(m_t[i], t)
         m_Ia[i,aux] = Ia;
         m_Ig[i,aux] = Ig;
     end
