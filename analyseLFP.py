@@ -24,23 +24,6 @@ def spectralAnalysis(signal, dt):
     freqs *= 1000; 
     return freqs, psd
 
-
-
-    # dB(adaptive_psd_mt, adaptive_psd_mt)
-
-
-    # dB(psd, psd)
-    # freqs, psd, adaptive_jk_var = tsa.multi_taper_psd( ar_seq, adaptive=True, jackknife=True)
-
-    # find 95% confidence limits from inverse of t-dist CDF
-    # Kmax = 14 
-    # jk_p = (dist.t.ppf(.975, Kmax - 1) * np.sqrt(adaptive_jk_var)) * ln2db
-    # adaptive_jk_limits = (adaptive_psd_mt - jk_p, adaptive_psd_mt + jk_p)
-
-
-    # fig = plot_spectral_estimate(freqs, psd, (adaptive_psd_mt,), adaptive_jk_limits, elabels=('adaptive-MT with JK 95% interval',))
-
-
 dt = 0.05
 fs = 1/dt 
 v_rates = ["1.2", "2.4"]
@@ -57,10 +40,7 @@ for rate in v_rates:
     data = np.loadtxt(fileIn)
     v_t = data[0,:]
     signal = data[1,20000:]
-    # plt.plot(v_t, signal)
-
     freqs, psd = spectralAnalysis(signal, dt)
-
     plt.semilogy(freqs, psd,label=rate)
     np.savetxt(fileOut, [freqs, psd])
 
@@ -72,6 +52,5 @@ plt.ylim(10**(-3), 1)
 plt.ylabel('LFP Power')
 plt.xlabel('Frequency (Hz)')
 plt.legend()
-# plt.show()
 plt.savefig(fileIn.replace(".dat", ".png"))
 

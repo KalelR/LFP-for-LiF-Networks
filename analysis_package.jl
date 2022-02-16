@@ -15,10 +15,10 @@ end
 
 function calcLFP(m_Ia, m_Ig)
     println(length(m_Ia[1,:]))
-    v_sum_Ia = abs.([sum(m_Ia[:,i]) for i=1:length(m_Ia[1,:])])
+    v_sum_Ia = abs.([sum(m_Ia[:,i]) for i=1:length(m_Ia[1,:])]) #abs(total Ia(t)); total Ia = sum over all neurons
     v_sum_Ig = abs.([sum(m_Ig[:,i]) for i=1:length(m_Ig[1,:])])
 
-    v_LFP = v_sum_Ia + v_sum_Ig
+    v_LFP = v_sum_Ia .+ v_sum_Ig
 end
 
 

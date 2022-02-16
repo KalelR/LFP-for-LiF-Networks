@@ -53,13 +53,10 @@ v_numS_ext = zeros(Int64, N) #counter of number of spikes at current time t
 v_tS_ext = [m_tS_ext[i][1] for i=1:N] #vector with current external spike times
 m_Ia = zeros(Float64, (N, Int64(floor((t_exec)/dt))))
 m_Ig = zeros(Float64, (N, Int64(floor((t_exec)/dt))))
-# m_Ia = [ [] for i=1:N]
-# m_Ig = [ [] for i=1:N]
 
 #---------integrator params
 tspan = [0.0, t_trans+t_exec]
 p = [v_τ_m, N, v_I, m3_adj, v_inh, v_t_refrac, m_tS, v_numS, m_tS_ext, v_numS_ext, m_Ia, m_Ig]
-# p = [v_τ_m, N, v_I, m3_adj, v_inh, v_t_refrac, m_tS, v_numS, m_tS_ext2]
 dt = 0.05
 
 #------------------ CALL SOLVER

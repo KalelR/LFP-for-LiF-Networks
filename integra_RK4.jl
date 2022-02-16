@@ -1,5 +1,3 @@
- 
-
 #--- f = dy/dx
 function integraStep(t::Float64, y, dy, h, f, p, aux)
     # for i=1:N
@@ -15,13 +13,6 @@ function integraStep(t::Float64, y, dy, h, f, p, aux)
     t += h;
     return yn, t
 end
-#----
-
-# t = 0.
-# y = 0.
-# dy = 0.
-# h = 0.01
-# @btime integraStep(t,y,dy,h,LIF!,p)
 
 #----solver function, receives ...
 function solver(y0, t_span, dt, p,f, v_reset, v_th, N, m_tS, v_numS, m_tS_ext, v_numS_ext)
@@ -53,4 +44,3 @@ function solver(y0, t_span, dt, p,f, v_reset, v_th, N, m_tS, v_numS, m_tS_ext, v
     end
     return v_t, m_y
 end
-#
